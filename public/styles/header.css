@@ -1,0 +1,19 @@
+.header-display {
+  height: 580px;
+  width: 100%;
+  background-color: #213864;
+  color: #FFFFFF;
+  top: 0;
+  font-family: "Source Sans Pro", "sans-serif";
+  background-image: url(https://www.transparenttextures.com/patterns/45-degree-fabric-light.png);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 55px;
+}
