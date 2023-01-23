@@ -35,3 +35,7 @@ textarea {
   flex-direction: column;
   justify-content: center;
 }
+
+.reduced-counter {
+  color: #DF1E3B;
+}
