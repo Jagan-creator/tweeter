@@ -11,7 +11,8 @@ button {
   font-family: "Bungee";
   display: flex;
   justify-content: space-between;
-  padding-top: 10px;
+  padding-top: 0.8em;
+  padding-bottom: 2em;
 }
 
 textarea {
