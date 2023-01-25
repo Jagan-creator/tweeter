@@ -41,6 +41,6 @@ article:hover {
   justify-content: space-between;
 }
 
-i:hover {
+.tweets-icons i:hover {
   color: #ad9a1e;
 }
