@@ -1,6 +1,8 @@
 .tweets-container {
   border: #545149 solid;
-  padding: 1em;
+  padding-inline: 3em;
+  padding-block: 1.5em;
+  margin-bottom: 2em;
 }
 
 article:hover {

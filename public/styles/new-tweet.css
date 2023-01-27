@@ -7,6 +7,11 @@ button {
   width: 110px;
 }
 
+button:hover {
+  background: #768dd8;
+  box-shadow: 0.2rem 0.2rem #A4BFD1;
+}
+
 .tweet-and-counter {
   font-family: "Bungee";
   display: flex;
