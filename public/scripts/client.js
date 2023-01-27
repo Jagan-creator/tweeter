@@ -6,33 +6,8 @@
 
 $(document).ready(function() {
 
-    const dataFormat = [
-      {
-        "user": {
-          "name": "Newton",
-          "avatars": "https://i.imgur.com/73hZDYK.png",
-          "handle": "@SirIsaac"
-        },
-        "content": {
-          "text": "If I have seen further it is by standing on the shoulders of giants"
-        },
-        "created_at": 1674521157251
-      },
-      {
-        "user": {
-          "name": "Descartes",
-          "avatars": "https://i.imgur.com/nlhLi3I.png",
-          "handle": "@rd"
-        },
-        "content": {
-          "text": "Je pense , donc je suis"
-        },
-        "created_at": 1674607557251
-      }
-    ]
-
-    const createTweetElement = function(tweetData) {
-      let $tweet = $(`
+  const createTweetElement = function(tweetData) {
+    let $tweet = $(`
         <article class="tweets-container">
           <header class="tweets-header">
             <div>
@@ -47,7 +22,7 @@ $(document).ready(function() {
             <span>${tweetData.content.text}</span>
           </main>
           <footer class="tweets-footer">
-            <span>${tweetData.created_at}</span>
+            <span>${timeago.format(tweetData.created_at)}</span>
               <div class="tweets-icons">
                 <span>
                   <i class="fa-solid fa-flag"></i>
@@ -57,23 +32,30 @@ $(document).ready(function() {
               </div>
           </footer>
         </article>
-      `)
-      return $tweet
+      `);
+    return $tweet;
+  };
+
+  const renderTweets = function(tweets) {
+    for (let tweet of tweets) {
+      const $tweet = createTweetElement(tweet);
+      $('.tweets-border').append($tweet);
     }
+  };
 
-    const renderTweets = function(tweets) {
-      for (let tweet of tweets) {
-        const $tweet = createTweetElement(tweet);
-          $('.tweets-border').append($tweet);
-      }
-    }
+  $('form').submit(function(e) {
+    e.preventDefault();
+    const newTweet = $('form').serialize();
+    $.post('/tweets', newTweet);
+  });
 
-    $('form').submit(function(e) {
-      e.preventDefault();
-      const newTweet = $('form').serialize();
-      $.post('/tweets', newTweet);
-    })
-
-    renderTweets(dataFormat);
+  const loadTweets = function() {
+    $.get('/tweets', function(newTweet) {
+      console.log("success", newTweet);
+      renderTweets(newTweet);
+    });
+  };
+  
+  loadTweets();
 
 });
