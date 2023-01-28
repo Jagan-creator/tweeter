@@ -45,8 +45,16 @@ $(document).ready(function() {
 
   $('form').submit(function(e) {
     e.preventDefault();
-    const newTweet = $('form').serialize();
-    $.post('/tweets', newTweet);
+    const tweets = $('textarea').val().length;
+
+    if (tweets === 0) {
+      return alert("You must enter text before submitting a tweet!")
+    } else if (tweets - 140 > 0) {
+      return alert("Your tweet has exceeded the maximum character count! Please try again.")
+    } else {
+      const newTweet = $('form').serialize();
+      $.post('/tweets', newTweet);
+    }
   });
 
   const loadTweets = function() {
