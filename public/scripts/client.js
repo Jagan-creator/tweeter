@@ -37,6 +37,7 @@ $(document).ready(function() {
   };
 
   const renderTweets = function(tweets) {
+    $('.tweets-border').empty();
     for (let tweet of tweets) {
       const $tweet = createTweetElement(tweet);
       $('.tweets-border').append($tweet);
@@ -48,20 +49,23 @@ $(document).ready(function() {
     const tweets = $('textarea').val().length;
 
     if (tweets === 0) {
-      return alert("You must enter text before submitting a tweet!")
+      return alert("You must enter text before submitting a tweet!");
     } else if (tweets - 140 > 0) {
-      return alert("Your tweet has exceeded the maximum character count! Please try again.")
+      return alert("Your tweet has exceeded the maximum character count! Please try again.");
     } else {
       const newTweet = $('form').serialize();
-      $.post('/tweets', newTweet);
+      $.post('/tweets', newTweet, () => {
+        loadTweets();
+      });
     }
   });
 
   const loadTweets = function() {
-    $.get('/tweets', function(newTweet) {
-      console.log("success", newTweet);
-      renderTweets(newTweet);
-    });
+    $.ajax('/tweets', {method: "GET", dataType: "json"})
+      .then((newTweet) => {
+        renderTweets(newTweet.reverse());
+      });
+    $('textarea').val("")
   };
   
   loadTweets();
