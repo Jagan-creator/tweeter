@@ -25,7 +25,7 @@
 .nav-tweeter:hover {
   padding-top: 10px;
   transition-duration: 0.2s;
-  color:#8b99c3;
+  text-shadow: 3px 3px 10px #1e1e1e;
 }
 
 .nav-right-side {
@@ -36,4 +36,9 @@
 
 .nav-logo-color {
   color: #DF1E3B;
+}
+
+.nav-logo-color:hover {
+  padding-bottom: 10px;
+  transition-duration: 0.2s;
 }
