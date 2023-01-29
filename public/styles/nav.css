@@ -16,6 +16,16 @@
   font-family: "Bungee";
   color: #FFFFFF;
   font-size: 36px;
+  padding: 0.7em;
+  position: relative;
+  display: block;
+  transition-duration: 0.2s;
+}
+
+.nav-tweeter:hover {
+  padding-top: 10px;
+  transition-duration: 0.2s;
+  color:#8b99c3;
 }
 
 .nav-right-side {
