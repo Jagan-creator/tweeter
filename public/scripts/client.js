@@ -6,6 +6,7 @@
 
 $(document).ready(function() {
 
+  // dynamic format of newly created tweets
   const createTweetElement = function(tweetData) {
     let $tweet = $(`
         <article class="tweets-container">
@@ -36,12 +37,14 @@ $(document).ready(function() {
     return $tweet;
   };
 
+  // helps escape any disruptful scripts that could be entered in a tweet
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
+  // empty the tweets-border and then render a new tweet
   const renderTweets = function(tweets) {
     $('.tweets-border').empty();
     for (let tweet of tweets) {
@@ -50,6 +53,16 @@ $(document).ready(function() {
     }
   };
 
+  // GETs a new tweet and orders it to the top while also clearing any text entered in the box
+  const loadTweets = function() {
+    $.ajax('/tweets', {method: "GET", dataType: "json"})
+      .then((newTweet) => {
+        renderTweets(newTweet.reverse());
+      });
+    $('textarea').val("")
+  };
+
+  // POSTs a new tweet as long as none of the initial errors happen
   $('form').submit(function(e) {
     e.preventDefault();
     const tweets = $('textarea').val().length;
@@ -65,14 +78,6 @@ $(document).ready(function() {
       });
     }
   });
-
-  const loadTweets = function() {
-    $.ajax('/tweets', {method: "GET", dataType: "json"})
-      .then((newTweet) => {
-        renderTweets(newTweet.reverse());
-      });
-    $('textarea').val("")
-  };
   
   loadTweets();
 
