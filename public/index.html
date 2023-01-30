@@ -22,6 +22,9 @@
     <!-- Icons CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- Errors CSS -->
+    <link rel="stylesheet" href="/styles/errors.css" type="text/css" />
+
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -70,6 +73,7 @@
 
     <!-- creating new tweet -->
       <section class="new-tweet">
+        <div class="error-container"></div>
         <h2>Compose Tweet</h2>
           <form action="/tweets" method="POST">
             <label for="tweet-text">What are you humming about?</label>

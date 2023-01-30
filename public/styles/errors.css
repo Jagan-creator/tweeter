@@ -1,0 +1,14 @@
+.error-container {
+  margin-top: 1em;
+  display: none;
+  background-color: #f4f1ec;
+  color: #DF1E3B;
+  font: "Source Sans Pro";
+  border-radius: 1em;
+  border: 0.2em solid #DF1E3B;
+  font-size: 1em;
+  padding: 0.2em;
+  padding-inline: 1.5em;
+  width: 100%;
+  text-align: center;
+}

@@ -62,15 +62,36 @@ $(document).ready(function() {
     $('textarea').val("")
   };
 
+  // displays an animated error message if certain criteria for a tweet are not met
+  const resetErrorMessage = violation => {
+    const tweets = $('textarea').val().length;
+    if (tweets === 0) {
+      $('.error-container').hide();
+      $('.error-container').empty();
+      $('.error-container').append("<p>You must enter text before submitting a tweet!</p>")
+      $('.error-container').slideDown("slow");
+      $('.error-container').delay(5000).slideUp("slow");
+    } else if (tweets - 140 > 0) {
+      $('.error-container').hide();
+      $('.error-container').empty();
+      $('.error-container').append("<p>Your tweet has exceeded the maximum character count! Please try again.</p>")
+      $('.error-container').slideDown("slow");
+      $('.error-container').delay(5000).slideUp("slow");
+    } else {
+      $('.error-container').hide();
+      $('.error-container').empty();
+    }
+  }
+
   // POSTs a new tweet as long as none of the initial errors happen
   $('form').submit(function(e) {
     e.preventDefault();
     const tweets = $('textarea').val().length;
 
     if (tweets === 0) {
-      return alert("You must enter text before submitting a tweet!");
+      resetErrorMessage();
     } else if (tweets - 140 > 0) {
-      return alert("Your tweet has exceeded the maximum character count! Please try again.");
+      resetErrorMessage();
     } else {
       const newTweet = $('form').serialize();
       $.post('/tweets', newTweet, () => {
