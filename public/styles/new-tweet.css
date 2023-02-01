@@ -22,10 +22,9 @@ button:hover {
 
 textarea {
   border: none;
-  display: block;
   border-bottom: solid;
   border-color: #545149;
-  width: 750px;
+  width: 100%;
   height: 40px;
   background-color: #f4f1ec;
   font-family: "Source Sans Pro", sans-serif;
@@ -34,9 +33,11 @@ textarea {
   padding-left: 6px;
   overflow: hidden;
   outline: none;
+  resize: none;
 }
 
 .new-tweet {
+  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -44,4 +45,12 @@ textarea {
 
 .reduced-counter {
   color: #DF1E3B;
+}
+
+.tweets-border {
+  width: 60%;
+}
+
+form {
+  width: 100%;
 }

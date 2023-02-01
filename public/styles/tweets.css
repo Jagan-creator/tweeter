@@ -3,6 +3,7 @@
   padding-inline: 3em;
   padding-block: 1.5em;
   margin-bottom: 2em;
+  width: 100%;
 }
 
 article:hover {
