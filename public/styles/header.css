@@ -1,6 +1,6 @@
 .header-display {
-  height: 580px;
-  width: 100%;
+  height: 525px;
+  width: 60%;
   background-color: #213864;
   color: #FFFFFF;
   top: 0;
@@ -9,6 +9,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 1.5em;
+  margin-left: 3em;
 }
 
 .header-user {
@@ -16,4 +18,10 @@
   flex-direction: column;
   align-items: center;
   font-size: 55px;
+}
+
+.header-user:hover {
+  padding-bottom: 15px;
+  transition-duration: 0.2s;
+  text-shadow: 2px 2px 8px #1e1e1e;
 }
