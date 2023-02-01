@@ -43,3 +43,9 @@
 .nav-logo-color {
   color: #DF1E3B;
 }
+
+@media only screen and (max-width: 1300px) {
+  .nav-display {
+    position: relative
+  }
+ }

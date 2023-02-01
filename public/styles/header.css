@@ -1,6 +1,6 @@
 .header-display {
   height: 525px;
-  width: 60%;
+  width: 100%;
   background-color: #213864;
   color: #FFFFFF;
   top: 0;
@@ -9,8 +9,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 1.5em;
-  margin-left: 3em;
 }
 
 .header-user {
@@ -25,3 +23,17 @@
   transition-duration: 0.2s;
   text-shadow: 2px 2px 8px #1e1e1e;
 }
+
+@media only screen and (min-width: 1300px) {
+  .header-display {
+    width: 60%;
+    margin-top: 1.5em;
+    margin-left: 3em;
+  } 
+ }
+
+ @media only screen and (max-width: 1300px) {
+  .header-user {
+    position: relative;
+  }
+ }
