@@ -1,8 +1,8 @@
-# Tweeter Project
+# Tweeter
 
 Tweeter is a simple, single-page Twitter clone.
 
-## Tweeter Features
+## Primary Features
 
 - tweets can be posted live on the webpage given the user of jquery
 - animated errors will be assessed given certain criteria are not met
@@ -22,13 +22,13 @@ Tweeter is a simple, single-page Twitter clone.
 ## Tweeter Preview
 
 ### Overall Tweeter Layout
-!["overall Tweeter layout"](https://github.com/Jagan-creator/tweeter/blob/master/public/images/tweet-display.gif)
+!["overall Tweeter layout"](https://github.com/Jagan-creator/tweeter/blob/master/public/images/tweet-layout.gif)
 
 ### Dynamic Resizing
 !["dynamic resizing"](https://github.com/Jagan-creator/tweeter/blob/master/public/images/tweet-sizing.gif)
 
 ### Hovering Effects
-!["hovering effects"](https://github.com/Jagan-creator/tweeter/blob/master/public/images/tweet-hovering.gif)
+!["hovering effects"](https://github.com/Jagan-creator/tweeter/blob/master/public/images/tweet-hover.gif)
 
 ### Maximum Character Count Error
 !["maximum character count error"](https://github.com/Jagan-creator/tweeter/blob/master/public/images/max-character-count.png)
@@ -44,6 +44,6 @@ Tweeter is a simple, single-page Twitter clone.
 - Chance
 - md5
 
-## Dependencies
+## Dev Dependencies
 
 - Nodemon
