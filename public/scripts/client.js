@@ -32,7 +32,7 @@ $(document).ready(function() {
   };
 
   // helps escape any disruptful scripts that could be entered in a tweet
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -53,7 +53,7 @@ $(document).ready(function() {
       .then((newTweet) => {
         renderTweets(newTweet.reverse());
       });
-    $('textarea').val("")
+    $('textarea').val("");
   };
 
   // displays an animated error message if certain criteria for a tweet are not met
@@ -62,20 +62,20 @@ $(document).ready(function() {
     if (tweets === 0) {
       $('.error-container').hide();
       $('.error-container').empty();
-      $('.error-container').append("<p>You must enter text before submitting a tweet!</p>")
+      $('.error-container').append("<p>You must enter text before submitting a tweet!</p>");
       $('.error-container').slideDown("slow");
       $('.error-container').delay(5000).slideUp("slow");
     } else if (tweets - 140 > 0) {
       $('.error-container').hide();
       $('.error-container').empty();
-      $('.error-container').append("<p>Your tweet has exceeded the maximum character count! Please try again.</p>")
+      $('.error-container').append("<p>Your tweet has exceeded the maximum character count! Please try again.</p>");
       $('.error-container').slideDown("slow");
       $('.error-container').delay(5000).slideUp("slow");
     } else {
       $('.error-container').hide();
       $('.error-container').empty();
     }
-  }
+  };
 
   // POSTs a new tweet as long as none of the initial errors happen
   $('form').submit(function(e) {
